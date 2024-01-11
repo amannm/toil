@@ -4,6 +4,9 @@ EXEC_NAME="toil"
 BUILD_DIR="build"
 
 build() {
+  go fmt ./...
+  staticcheck ./...
+  go test ./...
   local os="darwin"
   local arch="arm64"
   rm -rf "${BUILD_DIR}"

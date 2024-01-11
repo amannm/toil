@@ -16,7 +16,8 @@ func Execute(ctx context.Context) error {
 }
 
 func init() {
-	cobra.OnInitialize(func() {
-		rootCommand.AddCommand(stopCommand)
-	})
+	cobra.OnInitialize(initConfig)
+}
+
+func initConfig() {
 }
